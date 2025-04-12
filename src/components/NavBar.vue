@@ -3,7 +3,7 @@ import logo from "@/assets/logo.webp";
 </script>
 
 <template>
-  <div class="py-4 px-30 flex justify-between">
+  <nav class="fixed w-full py-4 px-30 flex justify-between">
     <img class="w-1/11" :src="logo" alt="logo" />
     <div class="flex">
       <p
@@ -22,7 +22,7 @@ import logo from "@/assets/logo.webp";
         Start For Free
       </button>
     </div>
-  </div>
+  </nav>
 </template>
 
 <script>
