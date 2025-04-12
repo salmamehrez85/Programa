@@ -11,6 +11,8 @@ import board from "@/assets/board.webp";
 import quickbooks from "@/assets/quickbooks.webp";
 import clientDashboard from "@/assets/clientDashboard.webp";
 import productApproval from "@/assets/productApproval.webp";
+import managementbg from "@/assets/managementbg.jpg";
+import Specificationbg from "@/assets/Specificationbg.jpg";
 
 import { ref } from "vue";
 </script>
@@ -271,7 +273,7 @@ import { ref } from "vue";
     >
       <!-- Background Image -->
       <img
-        :src="interior"
+        :src="Specificationbg"
         alt="Background"
         class="absolute inset-0 w-full h-180 object-cover z-0"
       />
@@ -283,11 +285,11 @@ import { ref } from "vue";
       <div
         class="relative z-20 flex flex-col items-center justify-center h-full text-white text-center"
       >
-        <h1 class="text-5xl md:text-6xl font-bold mb-15">
+        <h1 class="md:text-8xl font-semibold mb-15">
           Specification, streamlined
         </h1>
         <button
-          class="cursor-pointer px-6 py-3 bg-white text-black rounded-lg font-semibold hover:bg-gray-200 transition"
+          class="cursor-pointer px-6 py-3 bg-white/50 text-black rounded-lg font-semibold hover:bg-gray-200 transition"
         >
           Specification tools
         </button>
@@ -335,6 +337,64 @@ import { ref } from "vue";
             <p class="text-xl pl-42 pt-2">Brown</p>
           </div>
         </div>
+      </div>
+    </div>
+
+    <!-- Book a Demo 2-->
+    <div
+      class="flex flex-col items-center justify-center px-4 py-10 text-center"
+    >
+      <h1 class="text-4xl font-semibold">
+        Real-Time Specification, No Double Handling
+      </h1>
+      <p class="text-4xl pb-10">
+        Streamline your workflow with instant, accurate data
+      </p>
+      <div class="flex flex-row gap-4 items-center">
+        <button
+          class="cursor-pointer bg-gray-900 text-white px-6 py-3 rounded-md font-medium hover:bg-gray-600 transition-colors"
+        >
+          Get started
+        </button>
+        <button
+          class="cursor-pointer px-6 py-3 font-medium rounded-md border border-neutral-400 hover:bg-gray-200 transition-colors"
+        >
+          Book a demo
+        </button>
+      </div>
+    </div>
+
+    <!-- Management, minimised -->
+    <div
+      class="relative h-screen overflow-hidden mx-30 rounded-2xl my-20 bg-white"
+    >
+      <!-- Background Image -->
+      <img
+        :src="managementbg"
+        alt="Background"
+        class="absolute inset-0 w-full h-170 object-cover z-0"
+      />
+
+      <!-- Overlay -->
+      <div class="absolute inset-0 z-10"></div>
+
+      <!-- Heading + Button -->
+      <div
+        class="relative z-20 flex flex-col items-center justify-center h-full text-white text-center bottom-30"
+      >
+        <h1 class="md:text-8xl font-semibold">Management, minimised</h1>
+        <button
+          class="cursor-pointer mt-10 px-6 py-3 bg-white/50 text-black rounded-lg font-semibold hover:bg-gray-200 transition"
+        >
+          Management tools
+        </button>
+      </div>
+
+      <!-- Card  -->
+      <div
+        class="flex flex-col absolute bottom-1 left-1/2 transform -translate-x-1/2 z-30 top-130"
+      >
+        <img :src="light" alt="paint" class="w-80 h-90 rounded-2xl" />
       </div>
     </div>
   </div>
