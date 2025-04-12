@@ -11,8 +11,12 @@ import board from "@/assets/board.webp";
 import quickbooks from "@/assets/quickbooks.webp";
 import clientDashboard from "@/assets/clientDashboard.webp";
 import productApproval from "@/assets/productApproval.webp";
+import sofa from "@/assets/sofa.webp";
+import presentationPacks from "@/assets/presentationPacks.webp";
+
 import managementbg from "@/assets/managementbg.jpg";
 import Specificationbg from "@/assets/Specificationbg.jpg";
+import presentaionbg from "@/assets/presentaionbg.jpg";
 
 import { ref } from "vue";
 </script>
@@ -397,6 +401,143 @@ import { ref } from "vue";
         <img :src="light" alt="paint" class="w-80 h-90 rounded-2xl" />
       </div>
     </div>
+
+    <!-- Book a Demo 3-->
+    <div class="flex flex-col items-center justify-center px-4 text-center">
+      <h1 class="text-4xl font-semibold">Effortless Project Management</h1>
+      <p class="text-4xl pb-10">
+        Simplify your workflow with an intuitive, user-friendly platform
+      </p>
+      <div class="flex flex-row gap-4 items-center">
+        <button
+          class="cursor-pointer bg-gray-900 text-white px-6 py-3 rounded-md font-medium hover:bg-gray-600 transition-colors"
+        >
+          Get started
+        </button>
+        <button
+          class="cursor-pointer px-6 py-3 font-medium rounded-md border border-neutral-400 hover:bg-gray-200 transition-colors"
+        >
+          Book a demo
+        </button>
+      </div>
+    </div>
+
+    <!--Creativity, connected-->
+    <div
+      class="relative h-screen overflow-hidden mx-30 rounded-2xl my-20 bg-white"
+    >
+      <!-- Background Image -->
+      <img
+        :src="board"
+        alt="Background"
+        class="absolute inset-0 w-full h-170 object-cover rounded-4xl"
+      />
+
+      <!-- Overlay -->
+      <div class="absolute inset-0 z-10"></div>
+
+      <!-- Heading + Button -->
+      <div
+        class="relative z-20 flex flex-col items-center justify-center h-full text-white text-center bottom-30"
+      >
+        <h1 class="md:text-8xl font-semibold">Creativity, connected</h1>
+        <button
+          class="cursor-pointer mt-10 px-6 py-3 bg-white/50 text-black rounded-lg font-semibold hover:bg-gray-200 transition"
+        >
+          Creative tools
+        </button>
+      </div>
+
+      <!-- Card  -->
+      <div
+        class="flex flex-col absolute bottom-1 left-1/2 transform -translate-x-1/2 z-30 top-130"
+      >
+        <img :src="sofa" alt="paint" class="w-80 h-90 rounded-2xl" />
+      </div>
+    </div>
+
+    <!-- Book a Demo 4-->
+    <div class="flex flex-col items-center justify-center px-4 text-center">
+      <h1 class="text-4xl font-semibold">
+        Collaborative Tools, One Shared Space
+      </h1>
+      <p class="text-4xl pb-10 max-w-4xl">
+        Bring your studio together to ideate, iterate, and create seamlessly
+      </p>
+      <div class="flex flex-row gap-4 items-center">
+        <button
+          class="cursor-pointer bg-gray-900 text-white px-6 py-3 rounded-md font-medium hover:bg-gray-600 transition-colors"
+        >
+          Get started
+        </button>
+        <button
+          class="cursor-pointer px-6 py-3 font-medium rounded-md border border-neutral-400 hover:bg-gray-200 transition-colors"
+        >
+          Book a demo
+        </button>
+      </div>
+    </div>
+
+    <!-- Presentations, perfected -->
+    <div
+      class="relative h-screen overflow-hidden mx-30 rounded-2xl my-20 bg-white"
+    >
+      <!-- Background Image -->
+      <img
+        :src="presentaionbg"
+        alt="Background"
+        class="absolute inset-0 w-full h-170 object-cover rounded-4xl"
+      />
+
+      <!-- Overlay -->
+      <div class="absolute inset-0 z-10"></div>
+
+      <!-- Heading + Button -->
+      <div
+        class="relative z-20 flex flex-col items-center justify-center h-full text-white text-center bottom-30"
+      >
+        <h1 class="md:text-8xl font-semibold">Presentations, perfected</h1>
+        <button
+          class="cursor-pointer mt-10 px-6 py-3 bg-white/50 text-black rounded-lg font-semibold hover:bg-gray-200 transition"
+        >
+          Presentation tools
+        </button>
+      </div>
+
+      <!-- Card  -->
+      <div
+        class="flex flex-col absolute bottom-1 left-1/2 transform -translate-x-1/2 z-30 top-130"
+      >
+        <img
+          :src="presentationPacks"
+          alt="paint"
+          class="w-80 h-90 rounded-2xl"
+        />
+      </div>
+    </div>
+
+    <!-- Book a Demo 5-->
+    <div class="flex flex-col items-center justify-center px-4 text-center">
+      <h1 class="text-4xl font-semibold">
+        Purpose-Built Presentation for One Source of Truth
+      </h1>
+      <p class="text-4xl pb-10 max-w-4xl">
+        Seamlessly manage every stage of your project with unified tools
+      </p>
+      <div class="flex flex-row gap-4 items-center">
+        <button
+          class="cursor-pointer bg-gray-900 text-white px-6 py-3 rounded-md font-medium hover:bg-gray-600 transition-colors"
+        >
+          Get started
+        </button>
+        <button
+          class="cursor-pointer px-6 py-3 font-medium rounded-md border border-neutral-400 hover:bg-gray-200 transition-colors"
+        >
+          Book a demo
+        </button>
+      </div>
+    </div>
+    <hr class="mt-30 text-gray-300" />
   </div>
 </template>
 
