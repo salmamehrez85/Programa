@@ -6,7 +6,6 @@ import light from "@/assets/light.webp";
 import meeting from "@/assets/meeting.webp";
 import paint from "@/assets/paint.webp";
 import schedule from "@/assets/schedule.webp";
-import { ref } from "vue";
 </script>
 
 <template>
@@ -22,61 +21,55 @@ import { ref } from "vue";
     </p>
 
     <!-- Email Checker -->
-    <div class="py-15 pl-150">
-      <div
-        :class="[
-          'flex items-center border-2 hover:border-red-200 hover:shadow-xl rounded-2xl p-1 w-[500px] transition-all',
-          isError ? 'border-pink-400' : 'border-gray-200',
-        ]"
-      >
-        <input
-          v-model="email"
-          type="text"
-          placeholder="Enter your email"
-          class="flex-grow px-4 py-2 rounded-full outline-none"
-        />
-        <button
-          @click="validateEmail"
-          class="cursor-pointer bg-yellow-300 hover:bg-yellow-400 text-black px-4 py-2 rounded-full font-medium"
+    <form @submit.prevent="submitEmail">
+      <div class="py-15 pl-150">
+        <div
+          :class="[
+            'flex items-center border-2 hover:border-red-200 hover:shadow-xl rounded-2xl p-1 w-[500px] transition-all',
+            isError ? 'border-pink-400' : 'border-gray-200',
+          ]"
         >
-          Get started
-        </button>
+          <input
+            v-model="email"
+            type="email"
+            placeholder="Enter your email"
+            class="flex-grow px-4 py-2 rounded-full outline-none"
+            required
+          />
+          <button
+            type="submit"
+            class="cursor-pointer bg-yellow-300 hover:bg-yellow-400 text-black px-4 py-2 rounded-full font-medium"
+          >
+            Get started
+          </button>
+        </div>
       </div>
-      <p v-if="isError" class="text-pink-600 text-m px-2">Email is required</p>
-    </div>
+    </form>
 
     <!-- Image Section -->
-
-    <div class="w-full relative flex flex-wrap justify-around gap-30">
-      <div class="relative w-[400px] h-[300px]">
+    <div class="relative flex flex-wrap justify-start w-full">
+      <!-- LeFft Section -->
+      <div class="relative w-[600px] h-[450px] top-30">
         <img
           :src="chair"
-          class="rounded-xl shadow-lg w-full h-full object-cover"
+          class="rounded-3xl = w-8/12 h-full object-cover -ml-10"
         />
-        <img
-          :src="light"
-          class="absolute top-4 left-4 w-3/4 rounded-lg shadow-md"
-        />
+        <img :src="light" class="absolute top-15 left-40 w-7/12 rounded-lg" />
       </div>
-      <div class="relative w-[300px] h-[300px]">
-        <img
-          :src="interior"
-          class="rounded-xl shadow-lg w-full h-full object-cover"
-        />
-        <img
-          :src="schedule"
-          class="absolute top-4 left-4 w-3/4 rounded-lg shadow-md"
-        />
+
+      <!-- Middle Section -->
+      <div class="relative w-[600px] h-[400px] top-60">
+        <img :src="interior" class="rounded-3xl w-full h-full object-cover" />
+        <img :src="schedule" class="absolute top-17 w-7/12 rounded-lg -ml-15" />
       </div>
-      <div class="relative w-[300px] h-[300px]">
+
+      <!-- Right Section -->
+      <div class="relative w-[490px] h-[350px] pt-20">
         <img
           :src="meeting"
-          class="rounded-xl shadow-lg w-full h-full object-cover"
+          class="w-full h-full object-cover rounded-4xl ml-20"
         />
-        <img
-          :src="paint"
-          class="absolute top-4 left-4 w-3/4 rounded-lg shadow-md"
-        />
+        <img :src="paint" class="absolute top-40 w-8/12 rounded-lg -ml-20" />
       </div>
     </div>
   </div>
@@ -105,18 +98,6 @@ export default {
       this.email = "";
     },
   },
-};
-
-const email = ref("");
-const isError = ref(false);
-
-const validateEmail = () => {
-  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  isError.value = !regex.test(email.value.trim());
-  if (!isError.value) {
-    alert("Email submitted: " + email.value);
-    email.value = "";
-  }
 };
 </script>
 
