@@ -3,7 +3,9 @@ import logo from "@/assets/logo.webp";
 </script>
 
 <template>
-  <nav class="fixed w-full py-4 px-30 flex justify-between">
+  <nav
+    class="backdrop-blur-2xl z-[999] shadow-lg fixed w-full py-4 px-30 flex justify-between"
+  >
     <img class="w-1/11" :src="logo" alt="logo" />
     <div class="flex">
       <p
@@ -34,4 +36,5 @@ export default {
   },
 };
 </script>
+
 <style scoped></style>
