@@ -2,6 +2,9 @@
 import { ref } from "vue";
 import logo from "@/assets/logo.webp";
 
+const reloadAndScrollToTop = () => {
+  window.location.href = window.location.origin + window.location.pathname;
+};
 const items = ["Product", "Solutions", "Pricing", "Resources", "Editorial"];
 </script>
 
@@ -9,7 +12,12 @@ const items = ["Product", "Solutions", "Pricing", "Resources", "Editorial"];
   <nav
     class="backdrop-blur-2xl z-[999] shadow-lg fixed w-full py-4 px-10 flex justify-between bg-white"
   >
-    <img class="w-24" :src="logo" alt="logo" />
+    <img
+      class="w-40 ml-30 cursor-pointer"
+      :src="logo"
+      alt="logo"
+      @click="reloadAndScrollToTop"
+    />
 
     <div class="flex gap-6 relative">
       <!-- Product Dropdown -->
