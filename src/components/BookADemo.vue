@@ -1,6 +1,6 @@
 <template>
   <div
-    class="flex flex-col items-center justify-center px-4 py-16 text-center mt-50"
+    class="flex flex-col items-center justify-center px-4 py-16 text-center mt-20"
   >
     <h1 class="text-4xl font-semibold">{{ header }}</h1>
     <p class="text-3xl max-w-3xl pb-10">
