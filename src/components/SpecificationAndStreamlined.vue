@@ -23,19 +23,21 @@ import chair from "@/assets/chair.webp";
     <div
       class="relative z-20 flex flex-col items-center justify-center h-full text-white text-center"
     >
-      <h1 class="md:text-8xl font-semibold mb-15">
+      <h1
+        class="text-4xl sm:text-6xl md:text-8xl font-semibold mb-6 sm:mb-10 md:mb-15"
+      >
         Specification, streamlined
       </h1>
       <button
-        class="cursor-pointer px-6 py-3 bg-white/50 text-black rounded-lg font-semibold hover:bg-gray-200 transition"
+        class="cursor-pointer px-4 sm:px-6 py-2 sm:py-3 bg-white/50 text-black rounded-lg font-semibold hover:bg-gray-200 transition"
       >
         Specification tools
       </button>
     </div>
 
-    <!-- Floating Cards -->
+    <!-- Floating Cards - Hidden on small screens, shown in original position on large screens -->
     <div
-      class="flex flex-col absolute bottom-1 left-1/2 transform -translate-x-1/2 z-30 top-150"
+      class="hidden md:flex flex-col absolute bottom-1 left-1/2 transform -translate-x-1/2 z-30 top-150"
     >
       <!-- Card 1 -->
       <div
@@ -76,11 +78,59 @@ import chair from "@/assets/chair.webp";
         </div>
       </div>
     </div>
+
+    <!-- Mobile Floating Cards - Only visible on small screens -->
+    <div
+      class="md:hidden flex flex-col absolute bottom-35 left-1/2 transform -translate-x-1/2 z-30"
+    >
+      <!-- Mobile Card 1 -->
+      <div
+        class="relative w-64 h-16 backdrop-blur-md bg-white/20 rounded-xl shadow-lg p-2 flex items-center gap-2"
+      >
+        <img
+          :src="productApproval"
+          alt="productApproval"
+          class="w-12 h-12 rounded blur-sm"
+        />
+        <div>
+          <h3 class="text-sm font-semibold">Sofa</h3>
+          <p class="text-xs">Olive</p>
+        </div>
+      </div>
+      <!-- Mobile Card 2 -->
+      <div
+        class="absolute w-64 h-16 backdrop-blur-md left-4 top-4 bg-white/60 rounded-xl shadow flex items-center gap-2"
+      >
+        <img
+          :src="paint"
+          alt="productApproval"
+          class="w-12 h-12 rounded blur-xs"
+        />
+        <div>
+          <h3 class="text-sm font-semibold">Sofa</h3>
+          <p class="text-xs">Olive</p>
+        </div>
+      </div>
+      <!-- Mobile Card 3 -->
+      <div
+        class="absolute w-72 h-16 backdrop-blur-s left-8 top-8 bg-white/90 rounded-xl shadow flex items-center gap-2"
+      >
+        <img :src="chair" alt="paint" class="w-12 h-12 ml-2 rounded-lg" />
+        <div>
+          <h3 class="text-lg font-semibold ml-2">Chair</h3>
+          <p class="text-sm ml-4">Brown</p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
-<script>
-export default {};
-</script>
-
-<style scoped></style>
+<style scoped>
+@media (max-width: 768px) {
+  .relative.h-screen {
+    height: 100vh;
+    margin: 1rem;
+    border-radius: 1rem;
+  }
+}
+</style>

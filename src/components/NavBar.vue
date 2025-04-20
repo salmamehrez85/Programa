@@ -2,24 +2,43 @@
 import { ref } from "vue";
 import logo from "@/assets/logo.webp";
 
+const mobileMenuOpen = ref(false);
+const activeDropdown = ref(null);
+
+const toggleMobileMenu = () => {
+  mobileMenuOpen.value = !mobileMenuOpen.value;
+  activeDropdown.value = null;
+};
+
+const toggleDropdown = (dropdown) => {
+  if (activeDropdown.value === dropdown) {
+    activeDropdown.value = null;
+  } else {
+    activeDropdown.value = dropdown;
+  }
+};
+
 const reloadAndScrollToTop = () => {
   window.location.href = window.location.origin + window.location.pathname;
 };
+
 const items = ["Product", "Solutions", "Pricing", "Resources", "Editorial"];
 </script>
 
 <template>
   <nav
-    class="backdrop-blur-2xl z-[999] shadow-lg fixed w-full py-4 px-10 flex justify-between bg-white"
+    class="backdrop-blur-2xl z-[999] shadow-lg fixed w-full py-2 md:py-4 px-4 md:px-10 flex justify-between items-center bg-white"
   >
+    <!-- Logo -->
     <img
-      class="w-40 ml-30 cursor-pointer"
+      class="w-28 md:w-40 md:ml-30 cursor-pointer"
       :src="logo"
       alt="logo"
       @click="reloadAndScrollToTop"
     />
 
-    <div class="flex gap-6 relative">
+    <!-- Desktop Navigation -->
+    <div class="hidden md:flex gap-6 relative">
       <!-- Product Dropdown -->
       <div class="relative group">
         <p
@@ -159,8 +178,8 @@ const items = ["Product", "Solutions", "Pricing", "Resources", "Editorial"];
       </p>
     </div>
 
-    <!-- Buttons -->
-    <div class="flex gap-7">
+    <!-- Desktop Buttons -->
+    <div class="hidden md:flex gap-7">
       <button class="hover:underline cursor-pointer">Log in</button>
       <button
         class="cursor-pointer px-4 py-1 rounded-xl bg-yellow-200 hover:bg-yellow-300"
@@ -168,5 +187,188 @@ const items = ["Product", "Solutions", "Pricing", "Resources", "Editorial"];
         Start For Free
       </button>
     </div>
+
+    <!-- Mobile Menu Button -->
+    <button
+      @click="toggleMobileMenu"
+      class="md:hidden text-gray-800 focus:outline-none"
+    >
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          v-if="!mobileMenuOpen"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"
+        />
+        <path
+          v-else
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"
+        />
+      </svg>
+    </button>
   </nav>
+
+  <!-- Mobile Menu -->
+  <div
+    v-if="mobileMenuOpen"
+    class="md:hidden fixed top-14 left-0 w-full bg-white shadow-lg z-50 pt-4 pb-6 px-4 overflow-y-auto max-h-screen"
+    style="max-height: calc(100vh - 3.5rem)"
+  >
+    <!-- Mobile Navigation Items -->
+    <div class="space-y-1">
+      <!-- Product Dropdown -->
+      <div>
+        <button
+          @click="toggleDropdown('product')"
+          class="w-full flex justify-between items-center py-2 px-3 rounded-lg hover:bg-gray-100 focus:outline-none"
+        >
+          <span>Product</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 transform transition-transform"
+            :class="activeDropdown === 'product' ? 'rotate-180' : ''"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </button>
+        <div v-if="activeDropdown === 'product'" class="mt-1 ml-4 space-y-1">
+          <div class="p-2 hover:bg-gray-50 rounded-lg cursor-pointer">
+            <p class="font-semibold text-sm">Features</p>
+            <p class="text-gray-500 text-xs">Freedom, by design.</p>
+          </div>
+          <div class="p-2 hover:bg-gray-50 rounded-lg cursor-pointer">
+            <p class="font-semibold text-sm">Specification tools</p>
+            <p class="text-gray-500 text-xs">
+              Eliminate the data entry from your workflow
+            </p>
+          </div>
+          <div class="p-2 hover:bg-gray-50 rounded-lg cursor-pointer">
+            <p class="font-semibold text-sm">Management tools</p>
+            <p class="text-gray-500 text-xs">
+              Manage projects effortlessly and intuitively
+            </p>
+          </div>
+          <div class="p-2 hover:bg-gray-50 rounded-lg cursor-pointer">
+            <p class="font-semibold text-sm">Creative tools</p>
+            <p class="text-gray-500 text-xs">
+              Ideate, iterate and create in one space
+            </p>
+          </div>
+          <div class="p-2 hover:bg-gray-50 rounded-lg cursor-pointer">
+            <p class="font-semibold text-sm">Presentation tools</p>
+            <p class="text-gray-500 text-xs">
+              Purpose-built from concept to completion
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Solutions Dropdown -->
+      <div>
+        <button
+          @click="toggleDropdown('solutions')"
+          class="w-full flex justify-between items-center py-2 px-3 rounded-lg hover:bg-gray-100 focus:outline-none"
+        >
+          <span>Solutions</span>
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="h-5 w-5 transform transition-transform"
+            :class="activeDropdown === 'solutions' ? 'rotate-180' : ''"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M19 9l-7 7-7-7"
+            />
+          </svg>
+        </button>
+        <div v-if="activeDropdown === 'solutions'" class="mt-1 ml-4 space-y-1">
+          <p class="text-lg text-black bg-gray-100 px-2 py-1 rounded-lg mb-2">
+            For Designer
+          </p>
+          <p class="text-xs uppercase text-gray-400 font-bold mb-1 ml-2">
+            Features
+          </p>
+          <div class="p-2 hover:bg-gray-50 rounded-lg cursor-pointer">
+            <p class="font-semibold text-sm">Schedules</p>
+            <p class="text-gray-500 text-xs">
+              Centralise specification & reduce error.
+            </p>
+          </div>
+          <div class="p-2 hover:bg-gray-50 rounded-lg cursor-pointer">
+            <p class="font-semibold text-sm">Client Dashboard</p>
+            <p class="text-gray-500 text-xs">
+              Collaborate and share project details.
+            </p>
+          </div>
+          <div class="p-2 hover:bg-gray-50 rounded-lg cursor-pointer">
+            <p class="font-semibold text-sm">Mood Boards</p>
+            <p class="text-gray-500 text-xs">
+              Visualise, present & develop ideas.
+            </p>
+          </div>
+          <!-- Additional items -->
+          <div class="p-2 hover:bg-gray-50 rounded-lg cursor-pointer">
+            <p class="font-semibold text-sm">Web Clipper</p>
+            <p class="text-gray-500 text-xs">Project sourcing made easy.</p>
+          </div>
+          <div class="p-2 hover:bg-gray-50 rounded-lg cursor-pointer">
+            <p class="font-semibold text-sm">Product Library</p>
+            <p class="text-gray-500 text-xs">
+              All-in-one hub for product details.
+            </p>
+          </div>
+          <div class="p-2 hover:bg-gray-50 rounded-lg cursor-pointer">
+            <p class="font-semibold text-sm">Purchase Orders</p>
+            <p class="text-gray-500 text-xs">Efficient ordering, simplified.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Other Nav Items -->
+      <button
+        v-for="(item, i) in items.slice(2)"
+        :key="i"
+        class="w-full text-left py-2 px-3 rounded-lg hover:bg-gray-100 focus:outline-none"
+      >
+        {{ item }}
+      </button>
+    </div>
+
+    <!-- Mobile Buttons -->
+    <div class="mt-6 space-y-3">
+      <button
+        class="w-full py-2 text-center hover:underline focus:outline-none"
+      >
+        Log in
+      </button>
+      <button
+        class="w-full py-2 bg-yellow-200 hover:bg-yellow-300 rounded-xl focus:outline-none"
+      >
+        Start For Free
+      </button>
+    </div>
+  </div>
 </template>

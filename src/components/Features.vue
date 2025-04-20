@@ -6,10 +6,32 @@ import board from "@/assets/board.webp";
 import quickbooks from "@/assets/quickbooks.webp";
 import clientDashboard from "@/assets/clientDashboard.webp";
 import productApproval from "@/assets/productApproval.webp";
+
+const currentSlide = ref(0);
+
+function goToSlide(index) {
+  currentSlide.value = index;
+}
+
+// Optional: Auto-advancing slides
+let slideInterval;
+
+onMounted(() => {
+  // Uncomment to enable auto-advancing slides
+  /*
+  slideInterval = setInterval(() => {
+    currentSlide.value = (currentSlide.value + 1) % 2;
+  }, 5000);
+  */
+});
+
+onBeforeUnmount(() => {
+  if (slideInterval) clearInterval(slideInterval);
+});
 </script>
 
 <template>
-  <div class="w-full py-12 bg-white">
+  <div class="w-full py-8 md:py-12 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <!-- Slideshow container -->
       <div class="relative overflow-hidden">
@@ -20,11 +42,13 @@ import productApproval from "@/assets/productApproval.webp";
         >
           <!-- Slide 1 -->
           <div class="w-full flex-shrink-0">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8"
+            >
               <!-- Feature 1 -->
               <div class="flex flex-col items-center">
                 <div
-                  class="relative mb-6 w-full h-64 bg-gray-100 rounded-lg overflow-hidden"
+                  class="relative mb-4 md:mb-6 w-full h-52 md:h-64 bg-gray-100 rounded-lg overflow-hidden"
                 >
                   <img
                     :src="schedules"
@@ -32,10 +56,10 @@ import productApproval from "@/assets/productApproval.webp";
                     class="w-full h-full object-cover"
                   />
                 </div>
-                <h3 class="text-xl font-semibold text-center mb-2">
+                <h3 class="text-lg md:text-xl font-semibold text-center mb-2">
                   Schedules
                 </h3>
-                <p class="text-center text-gray-600">
+                <p class="text-center text-gray-600 text-sm md:text-base">
                   Goodbye spreadsheets. Hello cloud.
                 </p>
               </div>
@@ -43,7 +67,7 @@ import productApproval from "@/assets/productApproval.webp";
               <!-- Feature 2 -->
               <div class="flex flex-col items-center">
                 <div
-                  class="relative mb-6 w-full h-64 bg-gray-100 rounded-lg overflow-hidden"
+                  class="relative mb-4 md:mb-6 w-full h-52 md:h-64 bg-gray-100 rounded-lg overflow-hidden"
                 >
                   <img
                     :src="light"
@@ -51,10 +75,10 @@ import productApproval from "@/assets/productApproval.webp";
                     class="w-full h-full object-cover"
                   />
                 </div>
-                <h3 class="text-xl font-semibold text-center mb-2">
+                <h3 class="text-lg md:text-xl font-semibold text-center mb-2">
                   Project Management
                 </h3>
-                <p class="text-center text-gray-600">
+                <p class="text-center text-gray-600 text-sm md:text-base">
                   Keep your team and your projects, all in one place.
                 </p>
               </div>
@@ -62,7 +86,7 @@ import productApproval from "@/assets/productApproval.webp";
               <!-- Feature 3 -->
               <div class="flex flex-col items-center">
                 <div
-                  class="relative mb-6 w-full h-64 bg-gray-100 rounded-lg overflow-hidden"
+                  class="relative mb-4 md:mb-6 w-full h-52 md:h-64 bg-gray-100 rounded-lg overflow-hidden"
                 >
                   <img
                     :src="board"
@@ -70,10 +94,10 @@ import productApproval from "@/assets/productApproval.webp";
                     class="w-full h-full object-cover"
                   />
                 </div>
-                <h3 class="text-xl font-semibold text-center mb-2">
+                <h3 class="text-lg md:text-xl font-semibold text-center mb-2">
                   Pinboards
                 </h3>
-                <p class="text-center text-gray-600">
+                <p class="text-center text-gray-600 text-sm md:text-base">
                   Easily refine visual concepts, share ideas, and showcase your
                   design in a collaborative online space.
                 </p>
@@ -83,11 +107,13 @@ import productApproval from "@/assets/productApproval.webp";
 
           <!-- Slide 2 -->
           <div class="w-full flex-shrink-0">
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div
+              class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8"
+            >
               <!-- Feature 4 -->
               <div class="flex flex-col items-center">
                 <div
-                  class="relative mb-6 w-full h-64 bg-gray-100 rounded-lg overflow-hidden"
+                  class="relative mb-4 md:mb-6 w-full h-52 md:h-64 bg-gray-100 rounded-lg overflow-hidden"
                 >
                   <img
                     :src="quickbooks"
@@ -95,10 +121,10 @@ import productApproval from "@/assets/productApproval.webp";
                     class="w-full h-full object-cover"
                   />
                 </div>
-                <h3 class="text-xl font-semibold text-center mb-2">
+                <h3 class="text-lg md:text-xl font-semibold text-center mb-2">
                   Invoicing & Quickbooks Integration
                 </h3>
-                <p class="text-center text-gray-600">
+                <p class="text-center text-gray-600 text-sm md:text-base">
                   Invoice directly from your Schedules and Time Tracking
                   entries.
                 </p>
@@ -107,7 +133,7 @@ import productApproval from "@/assets/productApproval.webp";
               <!-- Feature 5 -->
               <div class="flex flex-col items-center">
                 <div
-                  class="relative mb-6 w-full h-64 bg-gray-100 rounded-lg overflow-hidden"
+                  class="relative mb-4 md:mb-6 w-full h-52 md:h-64 bg-gray-100 rounded-lg overflow-hidden"
                 >
                   <img
                     :src="clientDashboard"
@@ -115,10 +141,10 @@ import productApproval from "@/assets/productApproval.webp";
                     class="w-full h-full object-cover"
                   />
                 </div>
-                <h3 class="text-xl font-semibold text-center mb-2">
+                <h3 class="text-lg md:text-xl font-semibold text-center mb-2">
                   Client Dashboard
                 </h3>
-                <p class="text-center text-gray-600">
+                <p class="text-center text-gray-600 text-sm md:text-base">
                   All project stakeholders, together on one page, accessible
                   through a single link.
                 </p>
@@ -127,7 +153,7 @@ import productApproval from "@/assets/productApproval.webp";
               <!-- Feature 6 -->
               <div class="flex flex-col items-center">
                 <div
-                  class="relative mb-6 w-full h-64 bg-gray-100 rounded-lg overflow-hidden"
+                  class="relative mb-4 md:mb-6 w-full h-52 md:h-64 bg-gray-100 rounded-lg overflow-hidden"
                 >
                   <img
                     :src="productApproval"
@@ -135,10 +161,10 @@ import productApproval from "@/assets/productApproval.webp";
                     class="w-full h-full object-cover"
                   />
                 </div>
-                <h3 class="text-xl font-semibold text-center mb-2">
+                <h3 class="text-lg md:text-xl font-semibold text-center mb-2">
                   Product Approval
                 </h3>
-                <p class="text-center text-gray-600">
+                <p class="text-center text-gray-600 text-sm md:text-base">
                   Easy approvals within one platform can Reduce delays and
                   enhance client satisfaction.
                 </p>
@@ -148,7 +174,7 @@ import productApproval from "@/assets/productApproval.webp";
         </div>
 
         <!-- Navigation dots -->
-        <div class="flex justify-center mt-8">
+        <div class="flex justify-center mt-6 md:mt-8">
           <div class="flex space-x-2">
             <button
               v-for="(_, index) in 2"
@@ -168,14 +194,5 @@ import productApproval from "@/assets/productApproval.webp";
     </div>
   </div>
 </template>
-
-<script>
-const currentSlide = ref(0);
-function goToSlide(index) {
-  currentSlide.value = index;
-}
-
-export default {};
-</script>
 
 <style scoped></style>

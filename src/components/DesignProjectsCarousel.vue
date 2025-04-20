@@ -1,10 +1,14 @@
 <template>
   <div class="max-w-7xl mx-auto px-4 py-12">
     <!-- Heading and Navigation -->
-    <div class="flex justify-between items-end mb-8">
+    <div
+      class="flex flex-col md:flex-row md:justify-between md:items-end mb-8 gap-4 md:gap-0"
+    >
       <div>
-        <h2 class="text-3xl font-semibold text-gray-800">Made with Programa</h2>
-        <p class="text-lg text-gray-700 mt-2">
+        <h2 class="text-2xl md:text-3xl font-semibold text-gray-800">
+          Made with Programa
+        </h2>
+        <p class="text-base md:text-lg text-gray-700 mt-2">
           See how top designers are using Programa
         </p>
       </div>
@@ -39,10 +43,10 @@
             @click="nextSlide"
             class="w-10 h-10 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center transition-colors"
             aria-label="Next projects"
-            :disabled="currentIndex >= projects.length - visibleItems"
+            :disabled="currentIndex >= projects.length - visibleSlides"
             :class="{
               'opacity-50 cursor-not-allowed':
-                currentIndex >= projects.length - visibleItems,
+                currentIndex >= projects.length - visibleSlides,
             }"
           >
             <svg
@@ -64,8 +68,8 @@
       </div>
     </div>
 
-    <!-- Carousel Container -->
-    <div class="relative">
+    <!-- Desktop Carousel View - Hidden on mobile -->
+    <div class="hidden md:block relative">
       <div
         class="flex transition-transform duration-500 ease-in-out gap-5"
         :style="{
@@ -112,11 +116,55 @@
         </div>
       </div>
     </div>
+
+    <!-- Mobile Carousel View - Only visible on small screens -->
+    <div class="md:hidden relative">
+      <div
+        class="flex transition-transform duration-500 ease-in-out gap-4"
+        :style="{
+          transform: `translateX(-${currentIndex * 100}%)`,
+        }"
+      >
+        <div
+          v-for="(project, index) in projects"
+          :key="index"
+          class="flex-shrink-0 w-full"
+        >
+          <div class="relative h-[300px] rounded-lg overflow-hidden group">
+            <img
+              :src="project.imageSrc"
+              :alt="project.name"
+              class="h-full w-full object-cover"
+            />
+            <div
+              class="absolute inset-0 bg-opacity-20 flex items-center justify-center"
+            >
+              <h3
+                class="text-white text-2xl font-bold tracking-wider text-center whitespace-pre-line"
+              >
+                {{ project.logo }}
+              </h3>
+            </div>
+          </div>
+          <div class="mt-3">
+            <h4 class="text-lg font-semibold text-gray-900">
+              {{ project.name }}
+            </h4>
+            <p class="text-gray-700">{{ project.subtitle }}</p>
+            <div class="mt-2 flex items-center text-sm text-gray-500">
+              <span class="uppercase">{{ project.location }}</span>
+              <span class="mx-1">·</span>
+              <span>{{ project.category }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { ref, computed } from "vue";
 import specificationbg from "@/assets/specificationbg.jpg";
 import MKCA from "@/assets/MKCA.webp";
 import CUAIK from "@/assets/CUAIK.webp";
@@ -147,7 +195,6 @@ const projects = [
   },
   {
     name: "CUAIK | CDS",
-
     subtitle: "Made with Programa",
     location: "MEXICO CITY, MEX",
     category: "MULTIDISCIPLINARY",
@@ -155,7 +202,6 @@ const projects = [
   },
   {
     name: "STUDIO 8 ARCHITECT",
-
     subtitle: "In Practice",
     location: "NEW YORK CITY, USA",
     category: "RESIDENTIAL",
@@ -205,14 +251,18 @@ const projects = [
   },
 ];
 
-// Fixed number of visible items (4)
-const visibleItems = ref(4);
+// Fixed number of visible items (4 for desktop, 1 for mobile)
+const visibleItems = 4;
+const visibleSlides = computed(() => {
+  // This helps manage navigation buttons
+  return window.innerWidth >= 768 ? visibleItems : 1;
+});
 const currentIndex = ref(0);
 
 // Navigation methods
 const nextSlide = () => {
   // Move forward by 1 item, but don't exceed the maximum
-  if (currentIndex.value < projects.length - visibleItems.value) {
+  if (currentIndex.value < projects.length - visibleSlides.value) {
     currentIndex.value += 1;
   }
 };

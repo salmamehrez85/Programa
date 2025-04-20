@@ -21,7 +21,7 @@ const submitForm = () => {
   <footer class="bg-white text-black text-sm w-full">
     <!-- Top links section -->
     <div
-      class="max-w-7xl mx-auto py-12 grid grid-cols-2 md:grid-cols-6 gap-8 text-md"
+      class="max-w-7xl mx-auto py-8 md:py-12 px-4 md:px-0 grid grid-cols-2 md:grid-cols-6 gap-6 md:gap-8 text-md"
     >
       <!-- Column 1 -->
       <div>
@@ -83,36 +83,36 @@ const submitForm = () => {
     <hr class="mt-10 text-gray-300" />
     <!-- Middle row: logo + slogan + email -->
     <div
-      class="py-20 px-2 max-w-7xl mx-30 flex flex-col lg:flex-row items-center justify-between"
+      class="py-10 md:py-20 px-4 md:px-2 max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-8 lg:gap-0"
     >
       <!-- Logo and title -->
       <div class="flex items-center">
-        <img :src="logo" alt="Logo" class="w-4/12" />
+        <img :src="logo" alt="Logo" class="w-6/12 md:w-4/12" />
       </div>
 
       <div class="text-center text-lg">Freedom, by design</div>
 
       <!-- Email signup -->
       <div
-        class="bg-gray-100 relative flex items-center gap-20 backdrop-blur-sm px-2 py-2 rounded-2xl mr-10 left-50 focus-within:ring-1 shadow-xl focus-within:ring-pink-700 focus-within:border focus-within:border-red-500 transition-all duration-200"
+        class="bg-gray-100 relative flex flex-col sm:flex-row items-center gap-4 sm:gap-20 backdrop-blur-sm px-2 py-4 sm:py-2 rounded-2xl w-full sm:w-auto focus-within:ring-1 shadow-xl focus-within:ring-pink-700 focus-within:border focus-within:border-red-500 transition-all duration-200"
         tabindex="0"
       >
         <input
           type="email"
           v-model="email"
           placeholder="Enter your email"
-          class="pl-3 bg-transparent outline-none text-black placeholder-gray-300 text-sm"
+          class="pl-3 bg-transparent outline-none text-black placeholder-gray-300 text-sm w-full sm:w-auto"
         />
         <button
           @click="submitForm"
-          class="cursor-pointer bg-black text-white text-sm font-medium px-4 py-1.5 rounded-lg hover:bg-gray-400 transition"
+          class="cursor-pointer bg-black text-white text-sm font-medium px-4 py-1.5 rounded-lg hover:bg-gray-400 transition w-full sm:w-auto"
         >
           Get started
         </button>
         <!-- Error Message -->
         <div
           v-if="showError"
-          class="absolute top-13 left-3 text-red-500 text-sm"
+          class="absolute top-20 sm:top-13 left-3 text-red-500 text-sm"
         >
           Email is required
         </div>
@@ -123,7 +123,7 @@ const submitForm = () => {
 
     <!-- Bottom: links and copyright -->
     <div
-      class="py-6 px-8 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4 text-gray-400 text-xs"
+      class="py-6 px-4 md:px-8 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4 text-gray-400 text-xs"
     >
       <!-- Left -->
       <div class="space-y-1">
@@ -145,7 +145,7 @@ const submitForm = () => {
       </div>
 
       <!-- Right -->
-      <div class="space-y-1 md:text-right">
+      <div class="space-y-1 text-left md:text-right">
         <p>Terms & Conditions</p>
         <p>Privacy Policy</p>
         <p>Cookie Policy</p>

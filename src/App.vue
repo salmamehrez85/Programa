@@ -19,7 +19,7 @@ import Footer from "./components/Footer.vue";
 <template>
   <NavBar />
 
-  <div class="bg-white pt-60 w-full">
+  <div class="bg-white pt-60 w-full overflow-hidden">
     <HeroSection />
 
     <ImageSection />
