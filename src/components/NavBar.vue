@@ -18,10 +18,6 @@ const toggleDropdown = (dropdown) => {
   }
 };
 
-const reloadAndScrollToTop = () => {
-  window.location.href = window.location.origin + window.location.pathname;
-};
-
 const items = ["Product", "Solutions", "Pricing", "Resources", "Editorial"];
 </script>
 
@@ -30,12 +26,13 @@ const items = ["Product", "Solutions", "Pricing", "Resources", "Editorial"];
     class="backdrop-blur-2xl z-[999] shadow-lg fixed w-full py-2 md:py-4 px-4 md:px-10 flex justify-between items-center bg-white"
   >
     <!-- Logo -->
-    <img
-      class="w-28 md:w-40 md:ml-30 cursor-pointer"
-      :src="logo"
-      alt="logo"
-      @click="reloadAndScrollToTop"
-    />
+    <router-link to="/">
+      <img
+        class="w-28 md:w-40 md:ml-30 cursor-pointer"
+        :src="logo"
+        alt="logo"
+      />
+    </router-link>
 
     <!-- Desktop Navigation -->
     <div class="hidden md:flex gap-6 relative">
@@ -55,7 +52,10 @@ const items = ["Product", "Solutions", "Pricing", "Resources", "Editorial"];
               <p class="text-gray-500 text-xs">Freedom, by design.</p>
             </li>
             <li class="p-2 hover:bg-gray-50 rounded-lg cursor-pointer">
-              <p class="font-semibold text-sm">Specification tools</p>
+              <router-link to="/specification">
+                <p class="font-semibold text-sm">Specification tools</p>
+              </router-link>
+
               <p class="text-gray-500 text-xs">
                 Eliminate the data entry from your workflow
               </p>
