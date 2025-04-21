@@ -127,7 +127,9 @@ const items = ["Product", "Solutions", "Pricing", "Resources", "Editorial"];
                 <p class="text-gray-500 text-xs">Create and send invoices.</p>
               </li>
               <li class="p-2 hover:bg-gray-50 rounded-lg cursor-pointer">
-                <p class="font-semibold text-sm">Client Approvals</p>
+                <router-link to="/clientApprovals">
+                  <p class="font-semibold text-sm">Client Approvals</p>
+                </router-link>
                 <p class="text-gray-500 text-xs">Easy approvals & sharing.</p>
               </li>
             </ul>

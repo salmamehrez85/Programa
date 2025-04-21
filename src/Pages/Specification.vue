@@ -1,15 +1,18 @@
 <script setup>
-import BookADemo from "@/components/BookADemo.vue";
-import BookADemoSpecification from "@/components/BookADemoSpecification.vue";
+import BookADemo from "@/components/Home/BookADemo.vue";
+import BookADemoSpecification from "@/components/Specification Page/BookADemoSpecification.vue";
 import Footer from "@/components/Footer.vue";
-import HeroSpecification from "@/components/HeroSpecification.vue";
+import HeroSpecification from "@/components/Specification Page/HeroSpecification.vue";
 import NavBar from "@/components/NavBar.vue";
-import ScheduleFeatures from "@/components/ScheduleFeatures.vue";
+import ScheduleFeatures from "@/components/Specification Page/ScheduleFeatures.vue";
 import clientsReview from "@/assets/clientsReview.webp";
-import AccessibleEverywhere from "@/components/AccessibleEverywhere.vue";
-import WebClipper from "@/components/WebClipper.vue";
-import TrackManageDeliver from "@/components/TrackManageDeliver.vue";
+import AccessibleEverywhere from "@/components/Specification Page/AccessibleEverywhere.vue";
+import WebClipper from "@/components/Specification Page/WebClipper.vue";
+import TrackManageDeliver from "@/components/Specification Page/TrackManageDeliver.vue";
 import DayTrial from "@/components/DayTrial.vue";
+import StraightFromTheSource from "@/components/Specification Page/StraightFromTheSource.vue";
+import EnterDataOnce from "@/components/Specification Page/EnterDataOnce.vue";
+import SpecificationDoneRight from "@/components/Specification Page/SpecificationDoneRight.vue";
 </script>
 
 <template>
@@ -62,6 +65,13 @@ import DayTrial from "@/components/DayTrial.vue";
   </div>
 
   <TrackManageDeliver />
+
+  <StraightFromTheSource />
+
+  <EnterDataOnce />
+  <hr class="text-gray-200 mt-20" />
+
+  <SpecificationDoneRight />
 
   <DayTrial />
   <Footer />

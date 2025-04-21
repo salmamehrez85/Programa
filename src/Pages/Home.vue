@@ -1,18 +1,18 @@
 <script setup>
-import DesignProjectsCarousel from "@/components/DesignProjectsCarousel.vue";
-import ImageSection from "@/components/ImageSection.vue";
-import BookADemo from "@/components/BookADemo.vue";
-import Features from "@/components/Features.vue";
-import SpecificationAndStreamlined from "@/components/SpecificationAndStreamlined.vue";
-import Management from "@/components/Management.vue";
-import Creativity from "@/components/Creativity.vue";
-import Presentations from "@/components/Presentations.vue";
-import ProgramaInThePress from "@/components/ProgramaInThePress.vue";
-import CountriesSlideShow from "@/components/CountriesSlideShow.vue";
-import ChatOurTeam from "@/components/ChatOurTeam.vue";
+import DesignProjectsCarousel from "@/components/Home/DesignProjectsCarousel.vue";
+import ImageSection from "@/components/Home/ImageSection.vue";
+import BookADemo from "@/components/Home/BookADemo.vue";
+import Features from "@/components/Home/Features.vue";
+import SpecificationAndStreamlined from "@/components/Home/SpecificationAndStreamlined.vue";
+import Management from "@/components/Home/Management.vue";
+import Creativity from "@/components/Home/Creativity.vue";
+import Presentations from "@/components/Home/Presentations.vue";
+import ProgramaInThePress from "@/components/Home/ProgramaInThePress.vue";
+import CountriesSlideShow from "@/components/Home/CountriesSlideShow.vue";
+import ChatOurTeam from "@/components/Home/ChatOurTeam.vue";
 import DayTrial from "@/components/DayTrial.vue";
 import Footer from "@/components/Footer.vue";
-import HeroSection from "@/components/HeroSection.vue";
+import HeroSection from "@/components/Home/HeroSection.vue";
 import NavBar from "@/components/NavBar.vue";
 </script>
 

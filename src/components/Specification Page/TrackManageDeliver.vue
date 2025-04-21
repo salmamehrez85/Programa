@@ -1,10 +1,10 @@
 <template>
   <div
-    class="min-h-screen bg-gradient-to-br from-neutral-400 to-rose-300 p-8 rounded-3xl"
+    class="mx-30 min-h-screen bg-gradient-to-br from-neutral-400 to-rose-300 p-8 rounded-3xl"
   >
     <div class="container mx-auto max-w-7xl">
       <!-- Text and buttons section -->
-      <div class="mb-16 space-y-6 text-white">
+      <div class="mb-16 space-y-6 text-white mx-20">
         <h1 class="text-4xl font-bold">Track, manage, deliver.</h1>
         <p class="text-xl max-w-2xl">
           Track feedback, manage timelines all in the client dashboard to keep
@@ -12,12 +12,12 @@
         </p>
         <div class="flex gap-4">
           <button
-            class="bg-white text-gray-800 px-6 py-3 rounded-full font-medium hover:bg-opacity-90 transition"
+            class="cursor-pointer bg-white text-gray-800 px-6 py-3 rounded-full font-medium hover:bg-opacity-90 transition"
           >
             Try Programa Free
           </button>
           <button
-            class="text-black bg-transparent border border-white px-6 py-3 rounded-full font-medium hover:bg-white hover:bg-opacity-10 transition"
+            class="cursor-pointer text-black bg-transparent border border-white px-6 py-3 rounded-full font-medium hover:bg-white hover:bg-opacity-10 transition"
           >
             Book a demo
           </button>
