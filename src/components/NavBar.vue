@@ -17,8 +17,6 @@ const toggleDropdown = (dropdown) => {
     activeDropdown.value = dropdown;
   }
 };
-
-const items = ["Product", "Solutions", "Pricing", "Resources", "Editorial"];
 </script>
 
 <template>
@@ -171,12 +169,23 @@ const items = ["Product", "Solutions", "Pricing", "Resources", "Editorial"];
       </div>
 
       <!-- Remaining nav items -->
+      <router-link to="/pricing">
+        <p
+          class="px-4 rounded-lg hover:underline hover:bg-gray-100 cursor-pointer"
+        >
+          Pricing
+        </p>
+      </router-link>
+
       <p
-        v-for="(item, i) in items.slice(2)"
-        :key="i"
         class="px-4 rounded-lg hover:underline hover:bg-gray-100 cursor-pointer"
       >
-        {{ item }}
+        Resources
+      </p>
+      <p
+        class="px-4 rounded-lg hover:underline hover:bg-gray-100 cursor-pointer"
+      >
+        Editorial
       </p>
     </div>
 
