@@ -2,8 +2,9 @@
 import Home from "./Pages/Home.vue";
 import Specification from "./Pages/Specification.vue";
 import ClientApprovals from "./Pages/ClientApprovals.vue";
-import { createRouter, createWebHistory } from "vue-router";
+import Pricing from "./Pages/Pricing.vue";
 import router from "./router";
+import { createRouter, createWebHistory } from "vue-router";
 </script>
 
 <template>
