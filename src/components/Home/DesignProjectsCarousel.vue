@@ -130,15 +130,13 @@
           :key="index"
           class="flex-shrink-0 w-full"
         >
-          <div class="relative h-[300px] rounded-lg overflow-hidden group">
+          <div class="h-[300px] rounded-lg overflow-hidden group">
             <img
               :src="project.imageSrc"
               :alt="project.name"
               class="h-full w-full object-cover"
             />
-            <div
-              class="absolute inset-0 bg-opacity-20 flex items-center justify-center"
-            >
+            <div class="bg-opacity-20 flex items-center justify-center">
               <h3
                 class="text-white text-2xl font-bold tracking-wider text-center whitespace-pre-line"
               >

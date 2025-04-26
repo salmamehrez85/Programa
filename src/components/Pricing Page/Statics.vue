@@ -1,10 +1,10 @@
 <template>
-  <section class="py-6 px-5 md:px-2 max-w-7xl mx-60">
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
+  <section class="py-6 px-4 sm:px-6 md:px-8 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-6">
       <!-- Heading -->
-      <div class="flex items-center">
+      <div class="flex items-start md:items-center">
         <h2
-          class="text-xl md:text-lg font-bold text-gray-700 leading-tight mb-60"
+          class="text-xl sm:text-2xl md:text-lg lg:text-xl font-bold text-gray-700 leading-tight mb-4 md:mb-50"
         >
           Trusted by thousands of A&D professionals worldwide
         </h2>
@@ -14,10 +14,12 @@
       <div
         v-for="(stat, index) in stats"
         :key="index"
-        class="bg-gray-100 h-70 rounded-lg p-8 flex flex-col justify-between"
+        class="bg-gray-100 rounded-lg p-6 md:p-8 flex flex-col justify-between"
       >
-        <div class="mb-auto">
-          <p class="text-6xl md:text-7xl font-bold text-gray-900 mb-4">
+        <div class="mb-4">
+          <p
+            class="text-5xl sm:text-6xl md:text-5xl lg:text-6xl font-bold text-gray-900"
+          >
             {{ stat.percentage }}
           </p>
         </div>
