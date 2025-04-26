@@ -1,2 +1,24 @@
 /* @import "./base.css"; */
 @import "tailwindcss";
+
+/* main.css */
+
+/* Global font styles */
+* {
+  font-family: sans-serif; /* Default to sans-serif for all text */
+}
+
+/* Override for paragraphs */
+p {
+  font-family: sans-serif; /* Set Georgia for all paragraphs */
+}
+
+/* Override for all headers */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: sans-serif; /* Ensure all headers use sans-serif */
+}
