@@ -95,7 +95,7 @@ const toggleDropdown = (dropdown) => {
             <p
               class="text-2xl text-black bg-gray-100 px-2 py-2 rounded-2xl w-40 mb-3"
             >
-              For Desinger
+              For Designers
             </p>
             <hr class="text-gray-100 mb-5" />
             <p class="text-xs uppercase text-gray-400 font-bold mb-3">
