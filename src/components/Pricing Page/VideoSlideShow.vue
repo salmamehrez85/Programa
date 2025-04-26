@@ -27,7 +27,7 @@
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5"
+          class="cursor-pointer h-5 w-5"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -42,7 +42,7 @@
       </button>
       <button
         @click="nextSlide"
-        class="p-3 rounded-md border border-gray-200 hover:bg-gray-100 transition-colors"
+        class="cursor-pointer p-3 rounded-md border border-gray-200 hover:bg-gray-100 transition-colors"
         :disabled="currentSlide === videos.length - 1"
         :class="{
           'opacity-50 cursor-not-allowed': currentSlide === videos.length - 1,
@@ -50,7 +50,7 @@
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="h-5 w-5"
+          class="cursor-pointer h-5 w-5"
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -111,7 +111,7 @@
             controls
             @ended="stopVideo"
           >
-            <source :src="currentVideo.videoUrl" type="video/mp4" />
+            <source :src="currentVideo.youtubeEmbedUrl" type="video/mp4" />
             Your browser does not support the video tag.
           </video>
         </div>
@@ -125,15 +125,18 @@
           />
 
           <!-- Company Logo and Location -->
+
           <div class="absolute top-6 left-6 text-white">
             <h3 class="text-2xl font-bold">{{ currentVideo.company }}</h3>
-            <p>{{ currentVideo.location }}</p>
+            <p>
+              {{ currentVideo.location }}
+            </p>
           </div>
 
           <!-- Watch Now Button -->
           <button
             @click="playVideo(currentSlide)"
-            class="absolute bottom-6 left-6 bg-black/70 hover:bg-black text-white px-4 py-2 rounded-md flex items-center transition-colors"
+            class="cursor-pointer absolute bottom-6 left-6 backdrop-blur-2xl hover:bg-white hover:text-black text-white px-4 py-2 rounded-md flex items-center transition-colors"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -166,6 +169,12 @@
 
 <script setup>
 import { ref, computed, onBeforeUnmount } from "vue";
+import thumbnail1 from "@/assets/thumbnail1.webp";
+import thumbnail2 from "@/assets/thumbnail2.webp";
+import thumbnail3 from "@/assets/thumbnail3.webp";
+import mkcalogo from "@/assets/MKCALogo.webp";
+import homlogo from "@/assets/hommeboysLogo.webp";
+import mitchelllogo from "@/assets/mitchellLogo.webp";
 
 // Sample video data - replace with your actual videos
 const videos = [
@@ -173,34 +182,37 @@ const videos = [
     title: "MKCA Design Process",
     company: "MKCA",
     location: "New York, USA",
-    thumbnailUrl: "https://placehold.co/1280x720?text=MKCA+Video+Thumbnail",
-    videoUrl: "https://example.com/videos/mkca.mp4", // Replace with actual video URL
-    logoUrl: "https://placehold.co/200x80?text=MKCA",
+    thumbnailUrl: thumbnail1,
+    youtubeEmbedUrl:
+      "https://www.youtube.com/embed/nQgPSW1stLY?si=-1Em3N0KHjQxvLsI", // Corrected embed URL
+    logoUrl: mkcalogo,
   },
   {
     title: "Hommeboys Interiors",
     company: "Hommeboys Interiors",
     location: "Los Angeles, USA",
-    thumbnailUrl:
-      "https://placehold.co/1280x720?text=Hommeboys+Video+Thumbnail",
-    videoUrl: "https://example.com/videos/hommeboys.mp4", // Replace with actual video URL
-    logoUrl: "https://placehold.co/200x80?text=Hommeboys",
+    thumbnailUrl: thumbnail2,
+    youtubeEmbedUrl:
+      "https://www.youtube.com/embed/nQgPSW1stLY?si=-1Em3N0KHjQxvLsI", // Replace with actual video URL
+    logoUrl: homlogo,
   },
   {
     title: "Mitchell Eades Studio",
     company: "Mitchell Eades",
     location: "Sydney, Australia",
-    thumbnailUrl: "https://placehold.co/1280x720?text=Mitchell+Eades+Thumbnail",
-    videoUrl: "https://example.com/videos/mitchell-eades.mp4", // Replace with actual video URL
-    logoUrl: "https://placehold.co/200x80?text=Mitchell+Eades",
+    thumbnailUrl: thumbnail3,
+    youtubeEmbedUrl:
+      "https://www.youtube.com/embed/nQgPSW1stLY?si=-1Em3N0KHjQxvLsI", // Replace with actual video URL
+    logoUrl: mitchelllogo,
   },
   {
     title: "Studio Minosa Design",
     company: "Studio Minosa",
     location: "Melbourne, Australia",
-    thumbnailUrl: "https://placehold.co/1280x720?text=Studio+Minosa+Thumbnail",
-    videoUrl: "https://example.com/videos/studio-minosa.mp4", // Replace with actual video URL
-    logoUrl: "https://placehold.co/200x80?text=Studio+Minosa",
+    thumbnailUrl: thumbnail1,
+    youtubeEmbedUrl:
+      "https://www.youtube.com/embed/nQgPSW1stLY?si=-1Em3N0KHjQxvLsI", // Replace with actual video URL
+    logoUrl: mkcalogo,
   },
 ];
 

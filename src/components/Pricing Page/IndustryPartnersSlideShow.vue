@@ -1,5 +1,5 @@
 <template>
-  <section class="py-16 bg-white overflow-hidden mx-90">
+  <section class="py-16 bg-white overflow-hidden mx-80 px-4">
     <!-- Heading -->
     <div class="text-center mb-12">
       <h2 class="text-3xl md:text-4xl font-bold text-gray-900">
@@ -9,20 +9,18 @@
 
     <!-- Logo Slideshow -->
     <div class="relative">
-      <div class="flex animate-marquee">
-        <div class="flex space-x-16 min-w-full py-6 px-4">
-          <div
-            v-for="(logo, index) in partnerLogos"
-            :key="`logo-${index}`"
-            class="flex items-center justify-center w-32 md:w-48 flex-shrink-0 grayscale opacity-70 hover:opacity-100 transition-opacity duration-300"
-          >
-            <!-- Replace the src attribute with your own image path -->
-            <img
-              :src="`https://placehold.co/200x80?text=${logo}`"
-              :alt="`${logo} logo`"
-              class="h-12 md:h-16 object-contain"
-            />
-          </div>
+      <div class="flex animate-marquee space-x-10">
+        <div
+          v-for="(logo, index) in partnerLogos"
+          :key="`logo-${index}`"
+          class="flex items-center justify-center flex-shrink-10 w-32 md:w-1/5 opacity-70 hover:opacity-100 transition-opacity duration-500"
+        >
+          <!-- Use the dynamic src for each logo -->
+          <img
+            :src="logo.src"
+            :alt="logo.alt"
+            class="h-12 md:h-12 object-contain"
+          />
         </div>
       </div>
     </div>
@@ -30,17 +28,22 @@
 </template>
 
 <script setup>
-import VOGUE from "@/assets/VOGUE.webp";
+// Import your logos here
+import adpro from "@/assets/ADPROLogo.webp";
+import ad from "@/assets/ADLogo.webp";
+import dezeen from "@/assets/DEZEENLogo.webp";
+import ids from "@/assets/IDSLogo.webp";
+import vogue from "@/assets/VOGUELogo.webp";
 
-// Partner logos data
+// Partner logos data with paths
 const partnerLogos = [
-  "Design Institute",
-  "IDS",
-  "VOGUE",
-  "AD",
-  "ADPRO",
-  "ASID",
-  "dezeen",
+  { src: adpro, alt: "adpro" },
+
+  { src: ids, alt: "ids" },
+  { src: vogue, alt: "adpro" },
+
+  { src: ad, alt: "ad" }, // Change this if you want a different logo for "VOGUE"
+  { src: dezeen, alt: "dezeen" },
 ];
 </script>
 
@@ -55,11 +58,6 @@ const partnerLogos = [
 }
 
 .animate-marquee {
-  animation: marquee 30s linear infinite;
-}
-
-/* Pause animation on hover */
-.animate-marquee:hover {
-  animation-play-state: paused;
+  animation: marquee 20s linear infinite;
 }
 </style>

@@ -229,7 +229,7 @@
           Programa.
         </p>
         <button
-          class="bg-gray-900 hover:bg-gray-800 text-white font-medium py-3 px-6 rounded-md transition-colors duration-200"
+          class="cursor-pointer bg-gray-900 hover:bg-gray-800 text-white font-medium py-3 px-6 rounded-md transition-colors duration-200"
         >
           Contact Us
         </button>

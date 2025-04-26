@@ -1,5 +1,5 @@
 <template>
-  <section class="py-6 px-5 md:px-2 max-w-7xl mx-80">
+  <section class="py-6 px-5 md:px-2 max-w-7xl mx-60">
     <div class="grid grid-cols-1 md:grid-cols-4 gap-6">
       <!-- Heading -->
       <div class="flex items-center">
