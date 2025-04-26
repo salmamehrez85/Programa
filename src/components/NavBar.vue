@@ -168,6 +168,43 @@ const toggleDropdown = (dropdown) => {
         </div>
       </div>
 
+      <!-- Resources -->
+      <div class="relative group">
+        <p
+          class="px-4 rounded-lg hover:underline hover:bg-gray-100 cursor-pointer"
+        >
+          Resources
+        </p>
+        <div
+          class="absolute top-full left-0 mt-2 w-96 bg-white shadow-xl rounded-xl border border-gray-100 p-4 opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-200 z-50"
+        >
+          <ul>
+            <li class="p-2 hover:bg-gray-50 rounded-lg cursor-pointer">
+              <router-link to="/blog">
+                <p class="font-semibold text-sm">Blog</p>
+              </router-link>
+
+              <p class="text-gray-500 text-xs">
+                Company news, product updates, and more.
+              </p>
+            </li>
+            <li class="p-2 hover:bg-gray-50 rounded-lg cursor-pointer">
+              <p class="font-semibold text-sm">Made with Programa</p>
+
+              <p class="text-gray-500 text-xs">
+                Success stories from our users
+              </p>
+            </li>
+            <li class="p-2 hover:bg-gray-50 rounded-lg cursor-pointer">
+              <p class="font-semibold text-sm">Editorial</p>
+              <p class="text-gray-500 text-xs">
+                The best of design and architecture
+              </p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
       <!-- Remaining nav items -->
       <router-link to="/pricing">
         <p
@@ -177,11 +214,6 @@ const toggleDropdown = (dropdown) => {
         </p>
       </router-link>
 
-      <p
-        class="px-4 rounded-lg hover:underline hover:bg-gray-100 cursor-pointer"
-      >
-        Resources
-      </p>
       <p
         class="px-4 rounded-lg hover:underline hover:bg-gray-100 cursor-pointer"
       >
