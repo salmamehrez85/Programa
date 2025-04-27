@@ -24,7 +24,9 @@ import SpecificationDoneRight from "@/components/Specification Page/Specificatio
   />
   <ScheduleFeatures />
 
-  <div class="text-md border-1 w-60 text-center ml-175 py-2 px-2 mt-20">
+  <div
+    class="text-md border border-gray-300 w-full max-w-xs mx-auto md:max-w-xs lg:max-w-xs py-2 px-2 mt-10 md:mt-20 text-center rounded-sm shadow-sm"
+  >
     Schedules & Specification
   </div>
 
@@ -52,13 +54,17 @@ import SpecificationDoneRight from "@/components/Specification Page/Specificatio
   <WebClipper />
 
   <div
-    class="flex flex-col items-center justify-center px-80 py-16 text-center mt-10"
+    class="flex flex-col items-center justify-center px-4 sm:px-8 md:px-16 lg:px-40 xl:px-80 py-8 md:py-16 text-center mt-6 md:mt-10"
   >
-    <h1 class="text-4xl font-semibold px-20">
-      “The use of Schedules ensured efficient communication of changes and
-      reduced all back-and-forth with the client.”
+    <h1
+      class="text-2xl md:text-3xl lg:text-4xl font-semibold px-2 sm:px-6 md:px-10 lg:px-20"
+    >
+      "The use of Schedules ensured efficient communication of changes and
+      reduced all back-and-forth with the client."
     </h1>
-    <p class="text-md mt-5 max-w-3xl">
+    <p
+      class="text-md mt-3 md:mt-5 max-w-full sm:max-w-xl md:max-w-2xl lg:max-w-3xl"
+    >
       <span class="font-bold">Calvin Janse Van Vuuren </span>Senior Associate,
       Design Partnership
     </p>

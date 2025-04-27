@@ -25,14 +25,18 @@ import NavBar from "@/components/NavBar.vue";
   <SubmitForClientApproval />
 
   <div
-    class="flex flex-col items-center justify-center px-80 py-16 text-center mt-10"
+    class="flex flex-col items-center justify-center px-4 sm:px-8 md:px-16 lg:px-40 xl:px-80 py-6 sm:py-8 md:py-12 lg:py-16 text-center mt-4 sm:mt-6 md:mt-8 lg:mt-10"
   >
-    <h1 class="text-4xl font-semibold px-20">
-      “The standard fields and clear format of Programa has made the biggest
+    <h1
+      class="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-semibold px-2 sm:px-4 md:px-8 lg:px-16 xl:px-20"
+    >
+      "The standard fields and clear format of Programa has made the biggest
       difference in our project success by streamlining our input and approval
-      process, while generally reducing time spent on scheduling.”
+      process, while generally reducing time spent on scheduling."
     </h1>
-    <p class="text-md mt-5 max-w-3xl">
+    <p
+      class="text-sm sm:text-md mt-3 sm:mt-4 md:mt-5 max-w-full sm:max-w-xl md:max-w-2xl lg:max-w-3xl"
+    >
       <span class="font-bold">Yasmine Ghoneim </span>
       YSG
     </p>
